@@ -25,7 +25,7 @@
                     @endif
 
                     @if ($usr->can('role.create') || $usr->can('role.view') ||  $usr->can('role.edit') ||  $usr->can('role.delete'))
-                    <li>
+                    <!-- <li>
                         <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-tasks"></i><span>
                             Roles & Permissions
                         </span></a>
@@ -37,12 +37,12 @@
                                 <li class="{{ Route::is('admin.roles.create')  ? 'active' : '' }}"><a href="{{ route('admin.roles.create') }}">Create Role</a></li>
                             @endif
                         </ul>
-                    </li>
+                    </li> -->
                     @endif
 
                     
                     @if ($usr->can('admin.create') || $usr->can('admin.view') ||  $usr->can('admin.edit') ||  $usr->can('admin.delete'))
-                    <li>
+                    <!-- <li>
                         <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-user"></i><span>
                             Admins
                         </span></a>
@@ -56,19 +56,34 @@
                                 <li class="{{ Route::is('admin.admins.create')  ? 'active' : '' }}"><a href="{{ route('admin.admins.create') }}">Create Admin</a></li>
                             @endif
                         </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-user"></i><span>
-                        MADARIS
+                    </li> -->
+                    <!-- <li>
+                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-language"></i><span>
+                        LANGUAGES
                         </span></a>
                         <ul class="collapse {{ Route::is('admin.admins.create') || Route::is('admin.admins.index') || Route::is('admin.admins.edit') || Route::is('admin.admins.show') ? 'in' : '' }}">
                             
                             @if ($usr->can('admin.view'))
-                                <li class="{{ Route::is('admin.admins.index')  || Route::is('admin.admins.edit') ? 'active' : '' }}"><a href="{{ route('admin.admins.index') }}">All MADARIS</a></li>
+                                <li class="{{ Route::is('admin.admins.index')  || Route::is('admin.admins.edit') ? 'active' : '' }}"><a href="{{ route('admin.admins.index') }}">All LANGUAGES</a></li>
                             @endif
 
                             @if ($usr->can('admin.create'))
-                                <li class="{{ Route::is('admin.admins.create')  ? 'active' : '' }}"><a href="{{ route('admin.admins.create') }}">Create Madrsah</a></li>
+                                <li class="{{ Route::is('admin.admins.create')  ? 'active' : '' }}"><a href="{{ route('admin.admins.create') }}">Create LANGUAGE</a></li>
+                            @endif
+                        </ul>
+                    </li> -->
+                    <li>
+                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-language"></i>
+                            <span>Languages</span>
+                        </a>
+                        <ul class="collapse {{ Route::is('admin.admins.create') || Route::is('admin.admins.index') || Route::is('admin.admins.edit') || Route::is('admin.admins.show') ? 'in' : '' }}">
+                            
+                            @if ($usr->can('admin.view'))
+                                <li class="{{ Route::is('admin.admins.index')  || Route::is('admin.languages.edit') ? 'active' : '' }}"><a href="{{ route('admin.languages.index') }}">All Language</a></li>
+                            @endif
+
+                            @if ($usr->can('admin.create'))
+                                <li class="{{ Route::is('admin.admins.create')  ? 'active' : '' }}"><a href="{{ route('admin.languages.create') }}">Create Language</a></li>
                             @endif
                         </ul>
                     </li>
