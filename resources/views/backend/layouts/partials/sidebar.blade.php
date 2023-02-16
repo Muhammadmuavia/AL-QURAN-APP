@@ -2,11 +2,11 @@
  @php
      $usr = Auth::guard('admin')->user();
  @endphp
- <div class="sidebar-menu">
+ <div class="sidebar-menu" id="myNav">
     <div class="sidebar-header">
         <div class="logo">
             <a href="{{ route('admin.dashboard') }}">
-                <h2 class="text-white">Admin</h2> 
+                <h2 class="text-white"><span style="color: #FDC155;">Al</span>  Quran</h2> 
             </a>
         </div>
     </div>
@@ -16,10 +16,10 @@
                 <ul class="metismenu" id="menu">
 
                     @if ($usr->can('dashboard.view'))
-                    <li class="active">
+                    <li class=>
                         <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>dashboard</span></a>
                         <ul class="collapse">
-                            <li class="{{ Route::is('admin.dashboard') ? 'active' : '' }}"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+                            <li class="{{ Route::is('admin.dashboard') ?  : '' }}"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
                         </ul>
                     </li>
                     @endif
@@ -57,11 +57,44 @@
                             @endif
                         </ul>
                     </li>
+                    <li>
+                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-user"></i><span>
+                        MADARIS
+                        </span></a>
+                        <ul class="collapse {{ Route::is('admin.admins.create') || Route::is('admin.admins.index') || Route::is('admin.admins.edit') || Route::is('admin.admins.show') ? 'in' : '' }}">
+                            
+                            @if ($usr->can('admin.view'))
+                                <li class="{{ Route::is('admin.admins.index')  || Route::is('admin.admins.edit') ? 'active' : '' }}"><a href="{{ route('admin.admins.index') }}">All MADARIS</a></li>
+                            @endif
+
+                            @if ($usr->can('admin.create'))
+                                <li class="{{ Route::is('admin.admins.create')  ? 'active' : '' }}"><a href="{{ route('admin.admins.create') }}">Create Madrsah</a></li>
+                            @endif
+                        </ul>
+                    </li>
                     @endif
 
                 </ul>
+                
+               
             </nav>
+
+
+            <script>
+        function openNav() {
+  document.getElementById("myNav").style.width = "21%";
+}
+
+/* Close when someone clicks on the "x" symbol inside the overlay */
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}    
+
+
+</script>
         </div>
     </div>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="font-size: larger; display:flex;margin: top 1%; margin-left:9%"><b>x</b></a>
 </div>
+<button onclick="openNav()" ><b>XY</b></button>
 <!-- sidebar menu area end -->

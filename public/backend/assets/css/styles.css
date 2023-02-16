@@ -110,7 +110,7 @@
     height: 100vh;
     width: 280px;
     overflow: hidden;
-    background: #303641;
+    background: #58330A;
     box-shadow: 2px 0 32px rgba(0, 0, 0, 0.05);
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
@@ -140,8 +140,8 @@
 
 .sidebar-header {
     padding: 19px 32px 20px;
-    background: #303641;
-    border-bottom: 1px solid #343e50;
+    background: #58330A;
+    border-bottom: 1px solid #340a14;
 }
 .sidebar-menu .logo{
     text-align: center;
@@ -157,16 +157,17 @@
 .metismenu li a {
     position: relative;
     display: block;
-    color: #8d97ad;
+    color: #fff ;
     font-size: 15px;
     text-transform: capitalize;
     padding: 15px 15px;
     letter-spacing: 0;
     font-weight: 400;
+    background-color: #58330A;
 }
 
 .metismenu li a i {
-    color: #6a56a5;
+    color: #fff;
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
 }
@@ -177,7 +178,7 @@
     font-family: fontawesome;
     right: 15px;
     top: 12px;
-    color: #8d97ad;
+    color: #000;
     font-size: 20px;
 }
 
@@ -209,17 +210,18 @@
 .metismenu >li:hover>a,
 .metismenu >li.active>a {
     color: #fff;
-    background: #343942;
+    background: #FDC155;
 }
 
 .metismenu li:hover>a,
 .metismenu li.active>a {
-    color: #fff;
+    color: #000;
+    font-weight: bold;
 }
 
 .metismenu li:hover>a i,
 .metismenu li.active>a i {
-    color: #fff;
+    color: #000;
 }
 
 .metismenu li li a:after {
@@ -717,8 +719,8 @@ ul.breadcrumbs {
             align-items: center;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    background: -webkit-linear-gradient(left, #8914fe 0%, #8063f5 100%);
-    background: linear-gradient(to right, #8914fe 0%, #8063f5 100%);
+    /* background: -webkit-linear-gradient(left, #8914fe 0%, #8063f5 100%); */
+    background: linear-gradient(to right, #f1a419 0%, #58330A 100%);
     padding: 17px 38px;
     position: relative;
 }
@@ -799,7 +801,7 @@ ul.breadcrumbs {
 
 .user-profile .dropdown-menu a:hover {
     background: #f8f9fa;
-    color: #2942fa;
+    color: rgb(83, 43, 15);
 }
 
 /*-------------------- END Page Title Area -------------------*/
@@ -1178,7 +1180,7 @@ table.dbkit-table tr td {
 }
 
 .exchange-btn button:hover {
-    background: #3c34ab;
+    background: #412510;
 }
 
 .footer-area {
@@ -1236,7 +1238,7 @@ table.dbkit-table tr td {
 }
 
 .pagination_area ul li a:hover {
-    background: #8553fa;
+    background: #3e300d;
     color: #fff;
 }
 
@@ -1782,10 +1784,17 @@ table.dbkit-table tr td {
 
 /*-------------------- 10. Badge------------------- */
 
-.btn {
+.btn-create {
     padding: 11px 17px;
     font-size: 13px;
     letter-spacing: 0;
+    background-color: #FDC155;
+    color: black;
+    border-radius: solid 5px black;
+}
+.btn-create:hover{
+    background-color:#58330A !important;
+    color: #f9f7f7;
 }
 
 .btn-xl {
@@ -2318,7 +2327,7 @@ table.dataTable thead td {
 
 .login-form-head {
     text-align: center;
-    background: #8655FC;
+    background: #58330A;
     padding: 50px;
 }
 
@@ -2346,7 +2355,7 @@ table.dataTable thead td {
 }
 
 .form-gp label {
-    position: absolute;
+    /* position: absolute; */
     left: 0;
     top: 0;
     color: #b3b2b2;
@@ -2355,8 +2364,8 @@ table.dataTable thead td {
 }
 
 .form-gp.focused label {
-    top: -15px;
-    color: #7e74ff;
+    top: -20px;
+    color: #58330A;
 }
 
 .form-gp input {
@@ -2385,7 +2394,8 @@ table.dataTable thead td {
 .form-gp i {
     position: absolute;
     right: 5px;
-    color: #7e74ff;
+    color: #58330A;
+    padding: 2%;
     font-size: 16px;
 }
 
@@ -2406,7 +2416,7 @@ table.dataTable thead td {
     height: 50px;
     border: none;
     background: #fff;
-    color: #585b5f;
+    color: #58330A;
     border-radius: 40px;
     text-transform: uppercase;
     letter-spacing: 0;
@@ -2418,7 +2428,7 @@ table.dataTable thead td {
 }
 
 .submit-btn-area button:hover {
-    background: #2c71da;
+    background: #58330A;
     color: #ffffff;
 }
 
@@ -2832,6 +2842,12 @@ table.dataTable thead td {
 .s-sw-title h5 {
     font-size: 16px;
     color: #555;
+}
+
+.text-white {
+    color: #fff!important;
+    width: max-content;
+    font-family: -webkit-body;
 }
 
 /*-------------------- END Offset Sidebar ------------------- */

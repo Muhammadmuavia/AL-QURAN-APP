@@ -41,10 +41,10 @@ Admins - Admin Panel
         <div class="col-12 mt-5">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="header-title float-left">Admins List</h4>
+                    <h4 class="header-title float-left">Madaris List</h4>
                     <p class="float-right mb-2">
                         @if (Auth::guard('admin')->user()->can('admin.edit'))
-                            <a class="btn btn-primary text-white" href="{{ route('admin.admins.create') }}">Create New Admin</a>
+                            <a class="btn-create" href="{{ route('admin.admins.create') }}">Create New Madarsa</a>
                         @endif
                     </p>
                     <div class="clearfix"></div>
@@ -56,7 +56,7 @@ Admins - Admin Panel
                                     <th width="5%">Sl</th>
                                     <th width="10%">Name</th>
                                     <th width="10%">Email</th>
-                                    <th width="40%">Roles</th>
+                                    <th width="40%">Address</th>
                                     <th width="15%">Action</th>
                                 </tr>
                             </thead>

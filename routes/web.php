@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\products;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,16 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+// route::get("list",[products::class,'product updated']);
+// route::get("Add",[products::class,'Addproduct']);
+// route::get("Updated",[products::class,'productupdate']);
+
+route::controller(products::class)->group(function(){
+    route::get("list",'productlist');
+     route::get("Add",'Addproduct');
+    route::get("Update",'Updateproduct');
+
+});
 
 Auth::routes();
 
