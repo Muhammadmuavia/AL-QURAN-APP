@@ -57,21 +57,49 @@
                             @endif
                         </ul>
                     </li> -->
-                    <!-- <li>
-                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-language"></i><span>
-                        LANGUAGES
-                        </span></a>
+                    <li>
+                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-book"></i>
+                            <span>Surats</span>
+                        </a>
                         <ul class="collapse {{ Route::is('admin.admins.create') || Route::is('admin.admins.index') || Route::is('admin.admins.edit') || Route::is('admin.admins.show') ? 'in' : '' }}">
                             
                             @if ($usr->can('admin.view'))
-                                <li class="{{ Route::is('admin.admins.index')  || Route::is('admin.admins.edit') ? 'active' : '' }}"><a href="{{ route('admin.admins.index') }}">All LANGUAGES</a></li>
+                                <li class="{{ Route::is('admin.admins.index')  || Route::is('admin.surats.edit') ? 'active' : '' }}"><a href="{{ route('admin.surats.index') }}">All Surats</a></li>
+                            @endif
+                            @if ($usr->can('admin.create'))
+                                <li class="{{ Route::is('admin.admins.create')  ? 'active' : '' }}"><a href="{{ route('admin.surats.create') }}">Create Surats</a></li>
+                            @endif
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-book"></i>
+                            <span>Ayats</span>
+                        </a>
+                        <ul class="collapse {{ Route::is('admin.admins.create') || Route::is('admin.admins.index') || Route::is('admin.admins.edit') || Route::is('admin.admins.show') ? 'in' : '' }}">
+                            
+                            @if ($usr->can('admin.view'))
+                                <li class="{{ Route::is('admin.admins.index')  || Route::is('admin.ayats.edit') ? 'active' : '' }}"><a href="{{ route('admin.ayats.index') }}">All Ayats</a></li>
                             @endif
 
                             @if ($usr->can('admin.create'))
-                                <li class="{{ Route::is('admin.admins.create')  ? 'active' : '' }}"><a href="{{ route('admin.admins.create') }}">Create LANGUAGE</a></li>
+                                <li class="{{ Route::is('admin.admins.create')  ? 'active' : '' }}"><a href="{{ route('admin.ayats.create') }}">Create Ayats</a></li>
                             @endif
                         </ul>
-                    </li> -->
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-book"></i>
+                            <span>Qirats</span>
+                        </a>
+                        <ul class="collapse {{ Route::is('admin.admins.create') || Route::is('admin.admins.index') || Route::is('admin.admins.edit') || Route::is('admin.admins.show') ? 'in' : '' }}">
+                            
+                            @if ($usr->can('admin.view'))
+                                <li class="{{ Route::is('admin.admins.index')  || Route::is('admin.qirats.edit') ? 'active' : '' }}"><a href="{{ route('admin.qirats.index') }}">All Qirats</a></li>
+                            @endif
+                            @if ($usr->can('admin.create'))
+                                <li class="{{ Route::is('admin.admins.create')  ? 'active' : '' }}"><a href="{{ route('admin.qirats.create') }}">Create Qirat</a></li>
+                            @endif
+                        </ul>
+                    </li>
                     <li>
                         <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-language"></i>
                             <span>Languages</span>
@@ -109,7 +137,7 @@ function closeNav() {
 </script>
         </div>
     </div>
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="font-size: larger; display:flex;margin: top 1%; margin-left:9%"><b>x</b></a>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="font-size: larger; display:flex;margin: top 1%; margin-left:9%"></a>
 </div>
-<button onclick="openNav()" ><b>XY</b></button>
+<!-- <button onclick="openNav()" ><b>XY</b></button> -->
 <!-- sidebar menu area end -->
