@@ -62,7 +62,7 @@ Admins - Admin Panel
                                         <td><span>{{ $surat->surat_arabic }}</span></td>
                                         <td><span>{{ $surat->surat_english }}</span></td>
                                         <td>
-                                            <a class="btn btn-success text-white" href="{{ route('admin.surats.edit', $surat->surat_id) }}">Edit</a>
+                                            <a class="btn btn-warning text-dark" href="{{ route('admin.surats.edit', $surat->surat_id) }}">Edit</a>
                                         </td> 
                                     </tr>
                                 @endforeach

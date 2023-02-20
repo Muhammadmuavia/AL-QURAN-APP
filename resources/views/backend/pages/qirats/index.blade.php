@@ -62,7 +62,7 @@ Admins - Admin Panel
                                         <td><span>{{ $qirat->qari_name }}</span></td>
                                         <td><span class="fa fa-play"></span></td>
                                         <td>
-                                            <a class="btn btn-success text-white" href="{{ route('admin.qirats.edit', $qirat->qari_id) }}">Edit</a>
+                                            <a class="btn btn-warning text-dark" href="{{ route('admin.qirats.edit', $qirat->qari_id) }}">Edit</a>
                                         </td> 
                                     </tr>
                                 @endforeach

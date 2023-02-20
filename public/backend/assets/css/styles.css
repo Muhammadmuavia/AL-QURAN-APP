@@ -141,7 +141,7 @@
 .sidebar-header {
     padding: 19px 32px 20px;
     background: #58330A;
-    border-bottom: 1px solid #340a14;
+    border-bottom: 3px solid #FDC155;
 }
 .sidebar-menu .logo{
     text-align: center;
@@ -663,15 +663,15 @@
     top: 50%;
     width: 4px;
     height: 36px;
-    background: var(--primary-color);
+    background: linear-gradient(to right, #f1a419 0%, #58330A 100%);
     -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 .page-title {
     font-size: 24px;
     font-weight: 300;
-    color: #313b3d;
+    color: #58330A;
     letter-spacing: 0;
     margin-right: 30px;
 }
@@ -689,7 +689,7 @@ ul.breadcrumbs {
     display: block;
     font-size: 14px;
     font-weight: 400;
-    color: #7801ff;
+    color: #d0a046;
     letter-spacing: 0;
     margin-right: 16px;
     position: relative;
@@ -715,11 +715,10 @@ ul.breadcrumbs {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    /* background: -webkit-linear-gradient(left, #8914fe 0%, #8063f5 100%); */
+    flex-wrap: wrap;
     background: linear-gradient(to right, #f1a419 0%, #58330A 100%);
     padding: 17px 38px;
     position: relative;
@@ -802,6 +801,12 @@ ul.breadcrumbs {
 .user-profile .dropdown-menu a:hover {
     background: #f8f9fa;
     color: rgb(83, 43, 15);
+}
+
+.btn.btn-primary{
+    /* background: linear-gradient(to right, #f1a419 0%, #58330A 100%); */
+    background-color: #58330A;
+    border: none;
 }
 
 /*-------------------- END Page Title Area -------------------*/
@@ -1192,6 +1197,10 @@ table.dbkit-table tr td {
 .footer-area p {
     color: #676666;
     margin-bottom: 0;
+}
+
+.footer-area p a{
+    color: #fea500;
 }
 
 /*-------------------- END Letest Post ------------------- */
@@ -2109,7 +2118,7 @@ table tr td [class^="ti-"] {
 /*-------------------- 20. Datatable ------------------- */
 
 div.dataTables_wrapper div.dataTables_length select {
-    width: 76px;
+    width: 60px !important;
     margin: 0 10px;
 }
 
@@ -2128,7 +2137,6 @@ div.dataTables_wrapper div.dataTables_length select {
 .dataTables_wrapper .dataTables_paginate .paginate_button {
     padding: 0;
     border: none;
-    margin-top: 20px;
 }
 
 table.dataTable.no-footer {
@@ -2197,6 +2205,11 @@ table.dataTable thead td {
     color: #999;
     background-color: #f9f9f9;
     border-color: #999;
+}
+
+.page-item.active .page-link{
+    background-color: #58330A;
+    border: 1px solid #FDC155;
 }
 
 /*-------------------- END Datatable ------------------- */

@@ -66,8 +66,7 @@ Admins - Admin Panel
                                         <td><span>{{ $ayat->ayat_arabic }}</span></td>
                                         <td><span>{{ $ayat->ayat_english }}</span></td>
                                         <td>
-                                            <a class="btn btn-success text-white" href="{{ route('admin.ayats.edit', $ayat->ayat_id) }}">Edit</a>
-                                            <a class="btn btn-danger text-white" href="">Delete</a>
+                                            <a class="btn btn-warning text-dark" href="{{ route('admin.ayats.edit', $ayat->ayat_id) }}">Edit</a>
                                         </td> 
                                     </tr>
                                     @endforeach
