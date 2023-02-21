@@ -11,7 +11,7 @@ Admin Create - Admin Panel
             text-transform: capitalize;
         }
         select.form-control:not([size]):not([multiple]) {
-            height: calc(2.5rem + 2px);
+            height: calc(2.25rem + 2px);
         }
 
     </style>
@@ -24,10 +24,10 @@ Admin Create - Admin Panel
     <div class="row align-items-center">
         <div class="col-sm-6">
             <div class="breadcrumbs-area clearfix">
-                <h4 class="page-title pull-left">Add Qrat</h4>
+                <h4 class="page-title pull-left">Add Qirat</h4>
                 <ul class="breadcrumbs pull-left">
                     <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                    <li><a href="{{ route('admin.qirats.index') }}">All Qirat</a></li>
+                    <li><a href="{{ route('admin.qirats.index') }}">All Qirats</a></li>
                     <li><span>Add Qirat</span></li>
                 </ul>
             </div>
@@ -50,14 +50,21 @@ Admin Create - Admin Panel
 
                     <form action="{{ route('admin.qirats.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
+                        <input type="hidden" class="form-control" id="ayat_id" name="ayat_id" value="{{$_GET['ayat_id']}}" required="">
+                        <!-- <div class="form-row">
+                            <div class="form-group col-md-6 col-sm-12">
+                                <label for="ayat_id">Ayat Id</label>
+                                <input type="text" class="form-control" id="ayat_id" name="ayat_id" placeholder="Enter Ayat Id" required="">
+                            </div>
+                        </div> -->
                         <div class="form-row">
                             <div class="form-group col-md-6 col-sm-12">
-                                <label for="surat_arabic">Arabic Name</label>
-                                <input type="text" class="form-control" id="surat_arabic" name="surat_arabic" placeholder="Enter Arabic Name" required="">
+                                <label for="qari_name">Qari Name</label>
+                                <input type="text" class="form-control" id="qari_name" name="qari_name" placeholder="Enter Qari Name" required="">
                             </div>
                             <div class="form-group col-md-6 col-sm-12">
-                                <label for="surat_english">English Name</label>
-                                <input type="text" class="form-control" id="surat_english" name="surat_english" placeholder="Enter English Name" required="">
+                                <label for="qari_audio">Qari Audio</label>
+                                <input type="file" class="form-control" id="qari_audio" name="qari_audio" placeholder="Enter Qirat Audio " required="">
                             </div>
                         </div>
 
@@ -79,20 +86,4 @@ Admin Create - Admin Panel
         })
     </script> -->
 
-    <!-- for masking -->
-    <script>
-        $('input[name="zip_code"]').mask('00000');
-    </script>
-
-    <!--search box-->
-    <script>
-        $(document).ready(function(){
-            $("#myInput").on("keyup", function() {
-            var value = $(this).val().toLowerCase();
-            $("#myTable tr").filter(function() {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
-            });
-        });
-    </script>
 @endsection

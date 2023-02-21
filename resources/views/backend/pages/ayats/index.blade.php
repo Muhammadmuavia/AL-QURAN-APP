@@ -67,6 +67,7 @@ Admins - Admin Panel
                                         <td><span>{{ $ayat->ayat_english }}</span></td>
                                         <td>
                                             <a class="btn btn-warning text-dark" href="{{ route('admin.ayats.edit', $ayat->ayat_id) }}">Edit</a>
+                                            <a class="btn btn-success text-dark" href="{{ route('admin.qirats.index','ayat_id='. $ayat->ayat_id) }}">View Qari</a>
                                         </td> 
                                     </tr>
                                     @endforeach

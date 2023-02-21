@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
+use App\Qirat;
+use App\Ayat;
+use App\Surat;
 
 class DashboardController extends Controller
 {
@@ -28,9 +31,8 @@ class DashboardController extends Controller
             abort(403, 'Sorry !! You are Unauthorized to view dashboard !');
         }
 
-        $total_roles = count(Role::select('id')->get());
-        $total_admins = count(Admin::select('id')->get());
-        $total_permissions = count(Permission::select('id')->get());
-        return view('backend.pages.dashboard.index', compact('total_admins', 'total_roles', 'total_permissions'));
+        $total_surats = Surat::count();
+        $total_ayats = Ayat::count();
+        return view('backend.pages.dashboard.index', compact('total_surats','total_ayats'));
     }
 }

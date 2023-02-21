@@ -30,8 +30,11 @@ class QiratsController extends Controller
      */
     public function index()
     {       
-
-        $qirat = Qirat::all();
+        $ayat_id = $_GET['ayat_id'];
+        
+        $qirat = DB::table('qirat')
+             ->where('ayat_id', $ayat_id)
+             ->get();
             return view('backend.pages.qirats.index', compact('qirat'));   
 
     }
@@ -63,20 +66,32 @@ class QiratsController extends Controller
             abort(403, 'Sorry !! You are Unauthorized to create any language !');
         }
 
+        if($request->hasFile('qari_audio')) {
+            $qari_audio_namee = $request->file('qari_audio');
+            $qari_namee = time().'.'.$qari_audio_namee->getClientOriginalExtension();
+            $destinationPath = public_path('/qirats/qari_audio');
+            
+            $qari_audio_namee->move($destinationPath, $qari_namee);
+            $qari_audio = $qari_namee;
+        }
+
          // Validation Data
          $request->validate([
             'qari_name' => 'required|max:50',
-            'qari_audio' => 'required|max:50',
+            'ayat_id' => 'required|max:50'
         ]);
 
+
+
         // Create New Language
-        $qirat = new Surat();
+        $qirat = new Qirat();
+        $qirat->ayat_id = $request->ayat_id;
         $qirat->qari_name = $request->qari_name;
-        $qirat->qari_audio = $request->qari_audio;
+        $qirat->qari_audio = $qari_audio;
         $qirat->save();
 
         session()->flash('success', 'Qirat has been Added !!');
-        return redirect()->route('admin.qirats.index');
+        return redirect()->route('admin.qirats.index','ayat_id='. $request->ayat_id);
     }
 
     /**
@@ -128,15 +143,26 @@ class QiratsController extends Controller
         //     abort(403, 'Sorry !! You are Unauthorized to edit any admin !');
         // }
 
-        // TODO: You can delete this in your local. This is for heroku publish.
-        // This is only for Super Admin role,
-        // so that no-one could delete or disable it by somehow.
-
+        if($request->hasFile('qari_audio')) {
+            $qari_audio_namee = $request->file('qari_audio');
+            $qari_namee = time().'.'.$qari_audio_namee->getClientOriginalExtension();
+            $destinationPath = public_path('/qirats/qari_audio');
+            
+            $qari_audio_namee->move($destinationPath, $qari_namee);
+            $qari_audio = $qari_namee;
+        }
+        
+         // Validation Data
+         $request->validate([
+            'qari_name' => 'required|max:50',
+            'ayat_id' => 'required|max:50'
+        ]);
 
         // Create New Admin
         $qirat_array = [
+            'ayat_id' => $request->ayat_id,
             'qari_name' => $request->qari_name,
-            'qari_audio' => $request->qari_audio
+            'qari_audio' => $qari_audio
         ];
         DB::table('qirat')
             ->where('qari_id', $id)

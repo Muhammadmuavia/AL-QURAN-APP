@@ -23,7 +23,8 @@ Admins - Admin Panel
                 <h4 class="page-title pull-left">Qirat</h4>
                 <ul class="breadcrumbs pull-left">
                     <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                    <li><span>All Qirats</span></li>
+                    <li><a href="{{ route('admin.ayats.index') }}">All Ayats</a></li>
+                    <li><span>Ayat {{$_GET['ayat_id']}} Qirats</span></li>
                 </ul>
             </div>
         </div>
@@ -39,9 +40,9 @@ Admins - Admin Panel
         <div class="col-12 mt-3">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="header-title float-left">Qirats List</h4>
+                    <h4 class="header-title float-left">Ayat {{$_GET['ayat_id']}}</h4>
                     <p class="float-right mb-2">
-                        <a class="btn btn-primary text-white" href="">Add New Qirat</a>
+                        <a class="btn btn-primary text-white" href="{{ route('admin.qirats.create','ayat_id='. $_GET['ayat_id']) }}">Add New Qirat</a>
                     </p>
                     <div class="clearfix"></div>
                     <div class="data-tables">
@@ -49,7 +50,6 @@ Admins - Admin Panel
                         <table id="dataTable" class="text-center">
                             <thead class="bg-light text-capitalize">
                                 <tr>
-                                    <th>Qari ID</th>
                                     <th>Qari Name</th>
                                     <th>Qari Audio</th>
                                     <th>Actions</th>
@@ -58,9 +58,12 @@ Admins - Admin Panel
                             <tbody>
                                 @foreach($qirat as $qirat)
                                     <tr>
-                                        <td><span>{{ $qirat->qari_id }}</span></td>
                                         <td><span>{{ $qirat->qari_name }}</span></td>
-                                        <td><span class="fa fa-play"></span></td>
+                                        <td>
+                                            <audio controls>
+                                                <source src="/qirats/qari_audio/{{$qirat->qari_audio}}" type="audio/ogg">
+                                                <source src="horse.mp3" type="audio/mpeg">
+                                            </audio>
                                         <td>
                                             <a class="btn btn-warning text-dark" href="{{ route('admin.qirats.edit', $qirat->qari_id) }}">Edit</a>
                                         </td> 

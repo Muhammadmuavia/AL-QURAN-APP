@@ -44,7 +44,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('languages', 'Backend\LanguagesController', ['names' => 'admin.languages']);
     Route::resource('surats', 'Backend\SuratsController', ['names' => 'admin.surats']);
     Route::resource('ayats', 'Backend\AyatsController', ['names' => 'admin.ayats']);
-    Route::resource('qirats', 'Backend\qiratsController', ['names' => 'admin.qirats']);
+    Route::resource('qirats', 'Backend\QiratsController', ['names' => 'admin.qirats']);
 
 
     // Login Routes

@@ -72,7 +72,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-book"></i>
+                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-indent"></i>
                             <span>Ayats</span>
                         </a>
                         <ul class="collapse {{ Route::is('admin.admins.create') || Route::is('admin.admins.index') || Route::is('admin.admins.edit') || Route::is('admin.admins.show') ? 'in' : '' }}">
@@ -86,20 +86,7 @@
                             @endif
                         </ul>
                     </li>
-                    <li>
-                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-book"></i>
-                            <span>Qirats</span>
-                        </a>
-                        <ul class="collapse {{ Route::is('admin.admins.create') || Route::is('admin.admins.index') || Route::is('admin.admins.edit') || Route::is('admin.admins.show') ? 'in' : '' }}">
-                            
-                            @if ($usr->can('admin.view'))
-                                <li class="{{ Route::is('admin.admins.index')  || Route::is('admin.qirats.edit') ? 'active' : '' }}"><a href="{{ route('admin.qirats.index') }}">All Qirats</a></li>
-                            @endif
-                            @if ($usr->can('admin.create'))
-                                <li class="{{ Route::is('admin.admins.create')  ? 'active' : '' }}"><a href="{{ route('admin.qirats.create') }}">Create Qirat</a></li>
-                            @endif
-                        </ul>
-                    </li>
+
                     <li>
                         <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-language"></i>
                             <span>Languages</span>
